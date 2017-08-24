@@ -11,7 +11,7 @@ The recommended way to install composer packages is:
 
 Load it in your config/boostrap.php
 
-	Plugin::load('Trois/Newsletter');
+	Plugin::load('Trois/Newsletter', ['routes' => true, 'bootstrap' => true]);
 
 Run the following command in the CakePHP console to create the tables using the Migrations plugin:
 

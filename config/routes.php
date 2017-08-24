@@ -5,7 +5,7 @@ use Cake\Routing\Route\DashedRoute;
 
 Router::prefix('admin', function (RouteBuilder $routes) {
 	$routes->plugin('Trois/Newsletter', ['path' => '/newsletter'], function (RouteBuilder $routes) {
-		$routes->connect('/', ['controller' => 'Newsletter', 'action' => 'index'], ['routeClass' => DashedRoute::class]);
+		$routes->connect('/', ['controller' => 'Newsletters', 'action' => 'index'], ['routeClass' => DashedRoute::class]);
 		$routes->fallbacks(DashedRoute::class);
 	});
 });
