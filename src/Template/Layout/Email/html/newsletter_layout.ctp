@@ -198,7 +198,7 @@ img.g-img + div {
 
 		<!-- Visually Hidden Preheader Text : BEGIN -->
 		<div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: sans-serif;">
-			Bon pour la tête - notification
+			Description rapide de l'email
 		</div>
 		<!-- Visually Hidden Preheader Text : END -->
 
@@ -206,7 +206,7 @@ img.g-img + div {
 		<table role="presentation" aria-hidden="true" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
 			<tr>
 				<td style="padding: 20px 0; text-align: center">
-					<img src="https://s3.eu-central-1.amazonaws.com/static.bilatinvestigation.ch/logo.png" aria-hidden="true" width="100%" alt="alt_text" border="0" style="height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="header_img">
+					<img src="http://via.placeholder.com/600x150" aria-hidden="true" width="100%" alt="alt_text" border="0" style="height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="header_img">
 				</td>
 			</tr>
 		</table>
@@ -218,7 +218,7 @@ img.g-img + div {
 				<td style="padding: 40px 10px;width: 100%;font-size: 12px; font-family: sans-serif; line-height:18px; text-align: center; color: #888888;" class="x-gmail-data-detectors">
 					xxx<br>yyyy<br>
 					<br><br>
-					Pour vous désinscire ou modifier vos préférences aller dans
+					Pour vous désinscire cliquez <a href="#">ici</a>
 					<br><br>
 					powered by <a href="http://wgr.ch">WGR</a>
 				</td>

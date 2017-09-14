@@ -68,7 +68,7 @@ class NewslettersController extends AppController
     ]);
     $email = new Email();
     $email->subject($newsletter->subject);
-    $email->template('Trois/Newsletter.newsletter_content', 'Trois/Newsletter.newsletter_layout');
+    $email->template('newsletter_content', 'Trois/Newsletter.newsletter_layout');
     $email->emailFormat('html');
     $email->to($to_emails);
     $email->bcc($to_bcc);

@@ -36,7 +36,7 @@ class MailingListsController extends AppController
     public function view($id = null)
     {
         $mailingList = $this->MailingLists->get($id, [
-            'contain' => ['Newsletters']
+            'contain' => ['Newsletters', 'Contacts']
         ]);
 
         $this->set('mailingList', $mailingList);
