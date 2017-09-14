@@ -1,11 +1,11 @@
 <?php
-namespace Trois\Newsletter\Test\TestCase\Controller\Admin;
+namespace Trois\Newsletter\Test\TestCase\Controller;
 
 use Cake\TestSuite\IntegrationTestCase;
-use Trois\Newsletter\Controller\Admin\ContactsController;
+use Trois\Newsletter\Controller\ContactsController;
 
 /**
- * Trois\Newsletter\Controller\Admin\ContactsController Test Case
+ * Trois\Newsletter\Controller\ContactsController Test Case
  */
 class ContactsControllerTest extends IntegrationTestCase
 {

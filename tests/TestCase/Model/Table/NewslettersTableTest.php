@@ -25,9 +25,10 @@ class NewslettersTableTest extends TestCase
      */
     public $fixtures = [
         'plugin.trois/newsletter.newsletters',
-        'plugin.trois/newsletter.templates',
         'plugin.trois/newsletter.mailing_lists',
-        'plugin.trois/newsletter.newsletters_mailing_lists'
+        'plugin.trois/newsletter.newsletters_mailing_lists',
+        'plugin.trois/newsletter.posts',
+        'plugin.trois/newsletter.newsletters_posts'
     ];
 
     /**
@@ -70,16 +71,6 @@ class NewslettersTableTest extends TestCase
      * @return void
      */
     public function testValidationDefault()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test buildRules method
-     *
-     * @return void
-     */
-    public function testBuildRules()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

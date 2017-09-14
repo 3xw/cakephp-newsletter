@@ -2,12 +2,12 @@
 namespace Trois\Newsletter\Test\TestCase\Controller\Admin;
 
 use Cake\TestSuite\IntegrationTestCase;
-use Trois\Newsletter\Controller\Admin\ContactsController;
+use Trois\Newsletter\Controller\Admin\NewslettersController;
 
 /**
- * Trois\Newsletter\Controller\Admin\ContactsController Test Case
+ * Trois\Newsletter\Controller\Admin\NewslettersController Test Case
  */
-class ContactsControllerTest extends IntegrationTestCase
+class NewslettersControllerTest extends IntegrationTestCase
 {
 
     /**
@@ -16,7 +16,7 @@ class ContactsControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'plugin.trois/newsletter.contacts'
+        'plugin.trois/newsletter.newsletters'
     ];
 
     /**

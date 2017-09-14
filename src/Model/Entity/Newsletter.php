@@ -7,14 +7,16 @@ use Cake\ORM\Entity;
  * Newsletter Entity
  *
  * @property int $id
+ * @property \Cake\I18n\FrozenTime $created
+ * @property \Cake\I18n\FrozenTime $modified
+ * @property \Cake\I18n\FrozenTime $sended
  * @property string $subject
  * @property string $language
  * @property string $header
  * @property string $body
- * @property int $template_id
  *
- * @property \Trois\Newsletter\Model\Entity\Template $template
  * @property \Trois\Newsletter\Model\Entity\MailingList[] $mailing_lists
+ * @property \Trois\Newsletter\Model\Entity\Post[] $posts
  */
 class Newsletter extends Entity
 {

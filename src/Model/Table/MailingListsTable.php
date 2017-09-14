@@ -9,6 +9,7 @@ use Cake\Validation\Validator;
 /**
  * MailingLists Model
  *
+ * @property \Trois\Newsletter\Model\Table\ContactsTable|\Cake\ORM\Association\HasMany $Contacts
  * @property \Trois\Newsletter\Model\Table\NewslettersTable|\Cake\ORM\Association\BelongsToMany $Newsletters
  *
  * @method \Trois\Newsletter\Model\Entity\MailingList get($primaryKey, $options = [])
@@ -36,6 +37,10 @@ class MailingListsTable extends Table
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
 
+        $this->hasMany('Contacts', [
+            'foreignKey' => 'mailing_list_id',
+            'className' => 'Trois/Newsletter.Contacts'
+        ]);
         $this->belongsToMany('Newsletters', [
             'foreignKey' => 'mailing_list_id',
             'targetForeignKey' => 'newsletter_id',

@@ -16,7 +16,7 @@
             <?php
                               echo $this->Form->input('email', ['class' => 'form-control']);
                                     echo $this->Form->input('subscribe', ['class' => 'form-control']);
-                                    echo $this->Form->input('list_id', ['options' => $mailingLists, 'class' => 'form-control']);
+                                    echo $this->Form->input('mailing_list_id', ['class' => 'form-control']);
                               ?>
 
             <div class="btn-group">

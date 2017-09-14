@@ -7,11 +7,13 @@ use Cake\ORM\Entity;
  * Contact Entity
  *
  * @property int $id
+ * @property \Cake\I18n\FrozenTime $created
+ * @property \Cake\I18n\FrozenTime $modified
  * @property string $email
  * @property bool $subscribe
- * @property int $list_id
+ * @property int $mailing_list_id
  *
- * @property \Trois\Newsletter\Model\Entity\List $list
+ * @property \Trois\Newsletter\Model\Entity\MailingList $mailing_list
  */
 class Contact extends Entity
 {

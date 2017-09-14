@@ -10,6 +10,7 @@ use Cake\ORM\Entity;
  * @property string $name
  * @property string $language
  *
+ * @property \Trois\Newsletter\Model\Entity\Contact[] $contacts
  * @property \Trois\Newsletter\Model\Entity\Newsletter[] $newsletters
  */
 class MailingList extends Entity

@@ -9,7 +9,7 @@ use Cake\Validation\Validator;
 /**
  * Contacts Model
  *
- * @property |\Cake\ORM\Association\BelongsTo $MailingLists
+ * @property \Trois\Newsletter\Model\Table\MailingListsTable|\Cake\ORM\Association\BelongsTo $MailingLists
  *
  * @method \Trois\Newsletter\Model\Entity\Contact get($primaryKey, $options = [])
  * @method \Trois\Newsletter\Model\Entity\Contact newEntity($data = null, array $options = [])
@@ -18,6 +18,8 @@ use Cake\Validation\Validator;
  * @method \Trois\Newsletter\Model\Entity\Contact patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
  * @method \Trois\Newsletter\Model\Entity\Contact[] patchEntities($entities, array $data, array $options = [])
  * @method \Trois\Newsletter\Model\Entity\Contact findOrCreate($search, callable $callback = null, $options = [])
+ *
+ * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
 class ContactsTable extends Table
 {
@@ -36,8 +38,10 @@ class ContactsTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
+        $this->addBehavior('Timestamp');
+
         $this->belongsTo('MailingLists', [
-            'foreignKey' => 'list_id',
+            'foreignKey' => 'mailing_list_id',
             'joinType' => 'INNER',
             'className' => 'Trois/Newsletter.MailingLists'
         ]);
@@ -77,7 +81,7 @@ class ContactsTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->isUnique(['email']));
-        $rules->add($rules->existsIn(['list_id'], 'MailingLists'));
+        $rules->add($rules->existsIn(['mailing_list_id'], 'MailingLists'));
 
         return $rules;
     }

@@ -9,8 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Newsletters Model
  *
- * @property \Trois\Newsletter\Model\Table\TemplatesTable|\Cake\ORM\Association\BelongsTo $Templates
  * @property \Trois\Newsletter\Model\Table\MailingListsTable|\Cake\ORM\Association\BelongsToMany $MailingLists
+ * @property \Trois\Newsletter\Model\Table\PostsTable|\Cake\ORM\Association\BelongsToMany $Posts
  *
  * @method \Trois\Newsletter\Model\Entity\Newsletter get($primaryKey, $options = [])
  * @method \Trois\Newsletter\Model\Entity\Newsletter newEntity($data = null, array $options = [])
@@ -19,6 +19,8 @@ use Cake\Validation\Validator;
  * @method \Trois\Newsletter\Model\Entity\Newsletter patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
  * @method \Trois\Newsletter\Model\Entity\Newsletter[] patchEntities($entities, array $data, array $options = [])
  * @method \Trois\Newsletter\Model\Entity\Newsletter findOrCreate($search, callable $callback = null, $options = [])
+ *
+ * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
 class NewslettersTable extends Table
 {
@@ -37,16 +39,19 @@ class NewslettersTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Templates', [
-            'foreignKey' => 'template_id',
-            'joinType' => 'INNER',
-            'className' => 'Trois/Newsletter.Templates'
-        ]);
+        $this->addBehavior('Timestamp');
+
         $this->belongsToMany('MailingLists', [
             'foreignKey' => 'newsletter_id',
             'targetForeignKey' => 'mailing_list_id',
             'joinTable' => 'newsletters_mailing_lists',
             'className' => 'Trois/Newsletter.MailingLists'
+        ]);
+        $this->belongsToMany('Posts', [
+            'foreignKey' => 'newsletter_id',
+            'targetForeignKey' => 'post_id',
+            'joinTable' => 'newsletters_posts',
+            'className' => 'Trois/Newsletter.Posts'
         ]);
     }
 
@@ -63,6 +68,10 @@ class NewslettersTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
+            ->dateTime('sended')
+            ->allowEmpty('sended');
+
+        $validator
             ->requirePresence('subject', 'create')
             ->notEmpty('subject');
 
@@ -71,27 +80,11 @@ class NewslettersTable extends Table
             ->notEmpty('language');
 
         $validator
-            ->requirePresence('header', 'create')
-            ->notEmpty('header');
+            ->allowEmpty('header');
 
         $validator
-            ->requirePresence('body', 'create')
-            ->notEmpty('body');
+            ->allowEmpty('body');
 
         return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules)
-    {
-        $rules->add($rules->existsIn(['template_id'], 'Templates'));
-
-        return $rules;
     }
 }

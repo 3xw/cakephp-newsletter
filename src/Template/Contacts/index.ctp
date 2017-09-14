@@ -1,4 +1,4 @@
-<?= $this->element('header',['title' => __('Index of Templates'),'form' => true, 'menus' => [ '<i class="fa fa-plus"></i><p>'.__('Add').'</p>' => ['action' => 'add']]]) ?>
+<?= $this->element('header',['title' => __('Index of Contacts'),'form' => true, 'menus' => [ '<i class="fa fa-plus"></i><p>'.__('Add').'</p>' => ['action' => 'add']]]) ?>
 
 <div class="content">
   <div class="container-fluid">
@@ -10,7 +10,7 @@
 
           <!-- HEADER -->
           <div class="header">
-              <h4 class="title">List of <?= __('Templates') ?></h4>
+              <h4 class="title">List of <?= __('Contacts') ?></h4>
               <p class="category">
                 <?=
                 $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')])
@@ -30,21 +30,27 @@
                       <thead>
                         <tr>
                                                     <th><?= $this->Paginator->sort('id') ?></th>
-                                                    <th><?= $this->Paginator->sort('name') ?></th>
-                                                    <th><?= $this->Paginator->sort('layout_path') ?></th>
+                                                    <th><?= $this->Paginator->sort('created') ?></th>
+                                                    <th><?= $this->Paginator->sort('modified') ?></th>
+                                                    <th><?= $this->Paginator->sort('email') ?></th>
+                                                    <th><?= $this->Paginator->sort('subscribe') ?></th>
+                                                    <th><?= $this->Paginator->sort('mailing_list_id') ?></th>
                                                     <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                       </thead>
                       <tbody>
-                        <?php foreach ($templates as $template): ?>
+                        <?php foreach ($contacts as $contact): ?>
                           <tr>
-                                                      <td data-title="id"><?= $this->Number->format($template->id) ?></td>
-                                                            <td data-title="name"><?= h($template->name) ?></td>
-                                                            <td data-title="layout_path"><?= h($template->layout_path) ?></td>
-                                                              <td data-title="actions" class="actions" class="text-right">
-                              <?= $this->Html->link('<i class="fa fa-eye"></i>', ['action' => 'view', $template->id],['class' => 'btn btn-simple btn-info btn-icon edit','escape' => false]) ?>
-                              <?= $this->Html->link('<i class="fa fa-edit"></i>', ['action' => 'edit', $template->id], ['class' => 'btn btn-simple btn-warning btn-icon edit','escape' => false]) ?>
-                              <?= $this->Form->postLink('<i class="fa fa-times"></i>', ['action' => 'delete', $template->id], ['class' => 'btn btn-simple btn-danger btn-icon remove','escape' => false, 'confirm' => __('Are you sure you want to delete # {0}?', $template->id)]) ?>
+                                                      <td data-title="id"><?= $this->Number->format($contact->id) ?></td>
+                                                            <td data-title="created"><?= h($contact->created) ?></td>
+                                                            <td data-title="modified"><?= h($contact->modified) ?></td>
+                                                            <td data-title="email"><?= h($contact->email) ?></td>
+                                                            <td data-title="subscribe"><?= h($contact->subscribe) ?></td>
+                                                            <td data-title="Mailing List Id"><?= $contact->has('mailing_list') ? $this->Html->link($contact->mailing_list->name, ['controller' => 'MailingLists', 'action' => 'view', $contact->mailing_list->id]) : '' ?></td>
+                                                                <td data-title="actions" class="actions" class="text-right">
+                              <?= $this->Html->link('<i class="fa fa-eye"></i>', ['action' => 'view', $contact->id],['class' => 'btn btn-simple btn-info btn-icon edit','escape' => false]) ?>
+                              <?= $this->Html->link('<i class="fa fa-edit"></i>', ['action' => 'edit', $contact->id], ['class' => 'btn btn-simple btn-warning btn-icon edit','escape' => false]) ?>
+                              <?= $this->Form->postLink('<i class="fa fa-times"></i>', ['action' => 'delete', $contact->id], ['class' => 'btn btn-simple btn-danger btn-icon remove','escape' => false, 'confirm' => __('Are you sure you want to delete # {0}?', $contact->id)]) ?>
                             </td>
                           </tr>
                         <?php endforeach; ?>

@@ -4,16 +4,20 @@ namespace Trois\Newsletter\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Template Entity
+ * Post Entity
  *
  * @property int $id
- * @property string $name
- * @property string $description
- * @property string $layout_path
+ * @property string $title
+ * @property \Cake\I18n\FrozenTime $publish_date
+ * @property string $header
+ * @property string $body
+ * @property int $category_id
  *
+ * @property \Trois\Newsletter\Model\Entity\Category $category
+ * @property \Trois\Newsletter\Model\Entity\Attachment[] $attachments
  * @property \Trois\Newsletter\Model\Entity\Newsletter[] $newsletters
  */
-class Template extends Entity
+class Post extends Entity
 {
 
     /**

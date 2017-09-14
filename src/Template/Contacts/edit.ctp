@@ -1,4 +1,4 @@
-<?= $this->element('header',['title' => __('Edit Template'),'menus' => ['<i class="fa fa-list"></i><p>List </p>' => ['action' => 'index']]]) ?>
+<?= $this->element('header',['title' => __('Edit Contact'),'menus' => ['<i class="fa fa-list"></i><p>List </p>' => ['action' => 'index']]]) ?>
 
 <div class="content">
   <div class="container-fluid">
@@ -12,11 +12,11 @@
           <div class="content">
 
             <!-- FORM -->
-            <?= $this->Form->create($template); ?>
+            <?= $this->Form->create($contact); ?>
             <?php
-                              echo $this->Form->input('name', ['class' => 'form-control']);
-                                    echo $this->Form->input('description', ['class' => 'form-control']);
-                                    echo $this->Form->input('layout_path', ['class' => 'form-control']);
+                              echo $this->Form->input('email', ['class' => 'form-control']);
+                                    echo $this->Form->input('subscribe', ['class' => 'form-control']);
+                                    echo $this->Form->input('mailing_list_id', ['options' => $mailingLists, 'class' => 'form-control']);
                               ?>
 
             <div class="btn-group">

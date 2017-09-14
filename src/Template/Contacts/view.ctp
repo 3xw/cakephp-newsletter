@@ -28,13 +28,13 @@
                   <th scope="row"><?= __('Email') ?></th>
                   <td><?= h($contact->email) ?></td>
                 </tr>
+                                                                <tr>
+                  <th scope="row"><?= __('Mailing List') ?></th>
+                  <td><?= $contact->has('mailing_list') ? $this->Html->link($contact->mailing_list->name, ['controller' => 'MailingLists', 'action' => 'view', $contact->mailing_list->id]) : '' ?></td>
+                </tr>
                                                                                                                 <tr>
                   <th scope="row"><?= __('Id') ?></th>
                   <td><?= $this->Number->format($contact->id) ?></td>
-                </tr>
-                                <tr>
-                  <th scope="row"><?= __('Mailing List Id') ?></th>
-                  <td><?= $this->Number->format($contact->mailing_list_id) ?></td>
                 </tr>
                                                                                 <tr>
                   <th scope="row"><?= __('Created') ?></th>

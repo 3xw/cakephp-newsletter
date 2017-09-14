@@ -10,9 +10,8 @@ Router::prefix('admin', function (RouteBuilder $routes) {
 	});
 });
 
-/*
-Router::plugin('Trois/FR', ['path' => '/foundraising'], function (RouteBuilder $routes) {
+
+Router::plugin('Trois/Newsletter', ['path' => '/newsletter'], function (RouteBuilder $routes) {
   $routes->connect('/:controller');
-  //$routes->fallbacks('DashedRoute');
+  $routes->fallbacks('DashedRoute');
 });
-*/

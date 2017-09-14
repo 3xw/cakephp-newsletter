@@ -3,20 +3,20 @@ namespace Trois\Newsletter\Test\TestCase\Model\Table;
 
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
-use Trois\Newsletter\Model\Table\ContactsTable;
+use Trois\Newsletter\Model\Table\PostsTable;
 
 /**
- * Trois\Newsletter\Model\Table\ContactsTable Test Case
+ * Trois\Newsletter\Model\Table\PostsTable Test Case
  */
-class ContactsTableTest extends TestCase
+class PostsTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \Trois\Newsletter\Model\Table\ContactsTable
+     * @var \Trois\Newsletter\Model\Table\PostsTable
      */
-    public $Contacts;
+    public $Posts;
 
     /**
      * Fixtures
@@ -24,14 +24,13 @@ class ContactsTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'plugin.trois/newsletter.contacts',
-        'plugin.trois/newsletter.mailing_lists',
-        'plugin.trois/newsletter.newsletters',
-        'plugin.trois/newsletter.newsletters_mailing_lists',
         'plugin.trois/newsletter.posts',
         'plugin.trois/newsletter.categories',
         'plugin.trois/newsletter.attachments',
         'plugin.trois/newsletter.attachments_posts',
+        'plugin.trois/newsletter.newsletters',
+        'plugin.trois/newsletter.mailing_lists',
+        'plugin.trois/newsletter.newsletters_mailing_lists',
         'plugin.trois/newsletter.newsletters_posts'
     ];
 
@@ -43,8 +42,8 @@ class ContactsTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Contacts') ? [] : ['className' => ContactsTable::class];
-        $this->Contacts = TableRegistry::get('Contacts', $config);
+        $config = TableRegistry::exists('Posts') ? [] : ['className' => PostsTable::class];
+        $this->Posts = TableRegistry::get('Posts', $config);
     }
 
     /**
@@ -54,7 +53,7 @@ class ContactsTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Contacts);
+        unset($this->Posts);
 
         parent::tearDown();
     }

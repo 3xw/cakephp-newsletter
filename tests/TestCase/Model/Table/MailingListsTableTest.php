@@ -25,8 +25,14 @@ class MailingListsTableTest extends TestCase
      */
     public $fixtures = [
         'plugin.trois/newsletter.mailing_lists',
+        'plugin.trois/newsletter.contacts',
         'plugin.trois/newsletter.newsletters',
-        'plugin.trois/newsletter.newsletters_mailing_lists'
+        'plugin.trois/newsletter.newsletters_mailing_lists',
+        'plugin.trois/newsletter.posts',
+        'plugin.trois/newsletter.categories',
+        'plugin.trois/newsletter.attachments',
+        'plugin.trois/newsletter.attachments_posts',
+        'plugin.trois/newsletter.newsletters_posts'
     ];
 
     /**
