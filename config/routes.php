@@ -11,7 +11,7 @@ Router::prefix('admin', function (RouteBuilder $routes) {
 });
 
 
-Router::plugin('Trois/Newsletter', ['path' => '/newsletter'], function (RouteBuilder $routes) {
+Router::plugin('Trois/Newsletter', ['path' => '/mailing'], function (RouteBuilder $routes) {
   $routes->connect('/:controller');
   $routes->fallbacks('DashedRoute');
 });

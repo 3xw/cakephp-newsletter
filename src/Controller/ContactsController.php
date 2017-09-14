@@ -25,14 +25,12 @@ class ContactsController extends AppController
         if ($this->request->is('post')) {
             $contact = $this->Contacts->patchEntity($contact, $this->request->getData());
             if ($this->Contacts->save($contact)) {
-                $this->Flash->success(__('The contact has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
+                $this->Flash->success(__('You have been added to our mailing list.'));
+                return $this->redirect($this->referer());
             }
             $this->Flash->error(__('The contact could not be saved. Please, try again.'));
         }
-        $mailingLists = $this->Contacts->MailingLists->find('list', ['limit' => 200]);
-        $this->set(compact('contact', 'mailingLists'));
+        $this->set(compact('contact'));
         $this->set('_serialize', ['contact']);
     }
 
