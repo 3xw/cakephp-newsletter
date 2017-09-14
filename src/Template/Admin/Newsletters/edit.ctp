@@ -14,14 +14,14 @@
             <!-- FORM -->
             <?= $this->Form->create($newsletter); ?>
             <?php
-                              echo $this->Form->input('sended', ['class' => 'form-control']);
-                                    echo $this->Form->input('subject', ['class' => 'form-control']);
-                                    echo $this->Form->input('language', ['class' => 'form-control']);
-                                    echo $this->Form->input('header', ['class' => 'form-control']);
-                                    echo $this->Form->input('body', ['class' => 'form-control']);
-                                  echo $this->Form->input('mailing_lists._ids', ['options' => $mailingLists, 'class' => 'form-control']);
-                                echo $this->Form->input('posts._ids', ['options' => $posts, 'class' => 'form-control']);
-                            ?>
+            echo $this->Form->input('sended', ['class' => 'form-control']);
+            echo $this->Form->input('subject', ['class' => 'form-control']);
+            echo $this->Form->input('language', ['class' => 'form-control']);
+            echo $this->Form->input('header', ['class' => 'form-control']);
+            echo $this->Form->input('body', ['class' => 'form-control trumbowyg']);
+            echo $this->Form->input('mailing_lists._ids', ['options' => $mailingLists, 'class' => 'form-control']);
+            echo $this->Form->input('posts._ids', ['options' => $posts, 'class' => 'form-control']);
+            ?>
 
             <div class="btn-group">
               <?= $this->Html->link(__('Cancel'), $referer, ['class' => 'btn btn-sm btn-info btn-fill']) ?>
@@ -36,3 +36,4 @@
     </div><!-- end row-->
   </div><!-- end container-fluid-->
 </div><!-- end content-->
+<?=$this->element('wysiwyg')?>
