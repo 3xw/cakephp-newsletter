@@ -1,29 +1,16 @@
-<?=$this->Html->css('vendor/Trumbowyg/trumbowyg.min', ['block'=>'scriptBottom'])?>
-<?=$this->Html->css('vendor/Trumbowyg/trumbowyg.colors.min', ['block'=>'scriptBottom'])?>
-
-<?=$this->Html->script('Newsletter.vendor/Trumbowyg/trumbowyg.min', ['block'=>'scriptBottom'])?>
-<?=$this->Html->script('vendor/Trumbowyg/plugins/colors/trumbowyg.colors.min', ['block'=>'scriptBottom'])?>
-<?=$this->Html->script('vendor/Trumbowyg/plugins/noembed/trumbowyg.noembed.min', ['block'=>'scriptBottom'])?>
-
-
-<?=$this->Html->scriptBlock("$('.trumbowyg').trumbowyg({
-  lang:'fr',
-  btnsDef: {
-    // Customizables dropdowns
-
-  },
-  btns: [
-    ['viewHTML'],
-    ['formatting'],
-    'btnGrp-semantic',
-    ['link'],
-    'btnGrp-justify',
-    ['removeformat'],
-    ['fullscreen']
-
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+<script>
+tinymce.init({
+  selector: '.wysiwyg',
+  menubar: false,
+  height: 500,
+  plugins: [
+    'advlist autolink lists link textcolor',
+    'visualblocks code fullscreen',
+    'code help'
   ],
-  resetCss: true,
-  removeformatPasted: true,
-  autogrow: true
-
-});", ['block'=>true])?>
+  toolbar: 'link |insert | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
+  content_css: [
+    '//www.tinymce.com/css/codepen.min.css']
+});
+</script>
