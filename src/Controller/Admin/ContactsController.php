@@ -13,6 +13,51 @@ use Trois\Newsletter\Controller\AppController;
 class ContactsController extends AppController
 {
 
+  public function import()
+  {
+    $contact = $this->Contacts->newEntity();
+    if ($this->request->is('post')) {
+      if(empty($this->request->data['file']) || $this->request->data['file']['error'] !== 0)
+      {
+        $this->Flash->error(__('Import file dosen\'t work. Please, try again.'));
+      }else{
+        $string = file_get_contents($this->request->data['file']['tmp_name']);
+        preg_match_all(
+          '/[a-zA-z0-9.-]+\@[a-zA-z0-9.-]+\.[a-zA-Z]{2,3}/',
+          $string,
+          $matches
+        );
+        if(empty($matches)){
+          $this->Flash->error(__('No contact found. Please, try again.'));
+        }else{
+          $contacts = [];
+          $check = [];
+          foreach($matches[0] as $match)
+          {
+            if(!empty($check[$match]))
+              continue;
+            $check[$match] = true;
+            array_push($contacts,[
+              'email' => $match,
+              'mailing_list_id' => $this->request->data['mailing_list_id']
+            ]);
+          }
+          $entities = $this->Contacts->newEntities($contacts);
+          $result = $this->Contacts->saveMany($entities);
+          if (!empty($result)) {
+            $this->Flash->success(count($entities).' '.__('contacts have been saved.'));
+            return $this->redirect(['action' => 'index']);
+          }else{
+            $this->Flash->error(__('The contacts could not be saved. Please, try again.'));
+          }
+        }
+      }
+    }
+    $mailingLists = $this->Contacts->MailingLists->find('list', ['limit' => 200]);
+    $this->set(compact('contact', 'mailingLists'));
+    $this->set('_serialize', ['contact']);
+  }
+
     /**
      * Index method
      *
