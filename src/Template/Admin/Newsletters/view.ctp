@@ -166,35 +166,30 @@ img.g-img + div {
         <div class="content email-container">
           <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="600" style="margin: auto;" class="email-container">
 
-            <?php if ( $newsletter->header): ?>
-              <!-- 1 Column Text : BEGIN -->
-              <tr>
-                <td bgcolor="#ffffff">
-                  <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" width="100%">
-                    <tr>
-                      <td style="padding: 42px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+              <td bgcolor="#ffffff">
+                <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td style="padding: 42px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                      <?php if ($newsletter->header): ?>
                         <p>
                           <b><?= $newsletter->header?></b>
                         </p>
-                        <?php if ($newsletter->body): ?>
-                          <?= $newsletter->body?>
-                        <?php endif; ?>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-              <!-- 1 Column Text + Button : END -->
-            <?php endif; ?>
-
-
+                      <?php endif; ?>
+                      <?php if ($newsletter->body): ?>
+                        <?= $newsletter->body?>
+                      <?php endif; ?>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
             <tr>
               <td height="40" style="font-size: 0; line-height: 0;">
                 &nbsp;
               </td>
             </tr>
-
-
             <?php foreach ($newsletter->posts as $post): ?>
               <!-- Thumbnail Right, Text Left : BEGIN -->
               <tr>
@@ -342,8 +337,7 @@ img.g-img + div {
                     <?= $this->Form->button(__('Send Test'), ['class'=>'btn btn-default']) ?>
                     <?php echo $this->Form->end()  ?>
                     <hr>
-                    <?= $this->Form->postLink(__('Send').' <i class="fa fa-envelope-o"></i>', ['action' => 'send',  $newsletter->id], ['class' => 'btn  btn-danger','escape' => false,'confirm' => __('Are you sure you want to send # {0}?',  $newsletter->id)]) ?>
-
+                    <?= $this->Form->postLink(__('Send').' <i class="fa fa-envelope-o"></i>', ['action' => 'send',  $newsletter->id], ['class' => 'btn  btn-danger', 'id'=>'send-btn', 'escape' => false,'confirm' => __('Are you sure you want to send # {0}?',  $newsletter->id)]) ?>
                   </div>
                 </div>
               </div><!-- end dataTables_wrapper-->
