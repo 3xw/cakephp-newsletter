@@ -334,10 +334,12 @@ img.g-img + div {
                       <?php echo $this->Form->input('to', ['div'=>false, 'class'=>false,'placeholder'=>'jane.doe@example.com', 'label'=>false, 'class'=>'form-control', 'type'=>'email']) ?>
                     </div>
                     <?php echo $this->Form->input('newsletter_id', ['type'=>'hidden', 'value'=>$newsletter->id])?>
-                    <?= $this->Form->button(__('Send Test'), ['class'=>'btn btn-default']) ?>
+                    <?= $this->Form->button(__('Send Test'), ['class'=>'btn btn-default', 'onclick'=>"this.form.submit(); this.disabled=true; this.innerHTML='Sending…';"]) ?>
                     <?php echo $this->Form->end()  ?>
                     <hr>
-                    <?= $this->Form->postLink(__('Send').' <i class="fa fa-envelope-o"></i>', ['action' => 'send',  $newsletter->id], ['class' => 'btn  btn-danger', 'id'=>'send-btn', 'escape' => false,'confirm' => __('Are you sure you want to send # {0}?',  $newsletter->id)]) ?>
+                    <?= $this->Form->postLink(__('Send').' <i class="fa fa-envelope-o"></i>',
+                    ['action' => 'send',  $newsletter->id],
+                    ['class' => 'btn  btn-danger', 'id'=>'send-btn', 'escape' => false]) ?>
                   </div>
                 </div>
               </div><!-- end dataTables_wrapper-->
@@ -348,3 +350,10 @@ img.g-img + div {
     </div> <!-- end row -->
   </div> <!-- end container-fluid -->
 </div> <!-- end content -->
+<?php
+$this->Html->scriptStart(['block' => true]);
+  echo '$("#send-btn").submit(function( event ) {';
+  echo 'alert("coucou");';
+  echo '});';
+  $this->Html->scriptEnd();
+  ?>

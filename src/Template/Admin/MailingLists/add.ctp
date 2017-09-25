@@ -15,7 +15,7 @@
             <?= $this->Form->create($mailingList); ?>
             <?php
             echo $this->Form->input('name', ['class' => 'form-control']);
-            echo $this->Form->input('language', ['class' => 'form-control']);
+            echo $this->Form->input('language', ['class' => 'form-control', 'type'=>'select', 'options'=>['fr_CH'=>'FR', 'de_CH'=>'DE']]);
             echo $this->Form->input('newsletters._ids', ['options' => $newsletters, 'class' => 'form-control']);
             ?>
 

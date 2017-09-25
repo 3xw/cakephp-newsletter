@@ -28,9 +28,8 @@
             <?= $this->Form->create($newsletter); ?>
             <?php
             echo $this->Form->input('subject', ['class' => 'form-control']);
-            echo $this->Form->input('language', ['class' => 'form-control']);
+            echo $this->Form->input('language', ['class' => 'form-control', 'type'=>'select', 'options'=>['fr_CH'=>'FR', 'de_CH'=>'DE']]);
             echo $this->Form->input('mailing_lists._ids', ['options' => $mailingLists, 'class' => 'form-control select2']);
-            echo $this->Form->input('posts._ids', ['options' => $posts, 'class' => 'form-control select2']);
             ?>
             <div class="btn-group">
               <?= $this->Html->link(__('Cancel'), $referer, ['class' => 'btn btn-sm btn-info btn-fill']) ?>
