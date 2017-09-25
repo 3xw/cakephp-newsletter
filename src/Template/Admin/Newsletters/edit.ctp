@@ -44,5 +44,4 @@
     </div><!-- end row-->
   </div><!-- end container-fluid-->
 </div><!-- end content-->
-<?=$this->element('wysiwyg')?>
 <?=$this->element('select2')?>
