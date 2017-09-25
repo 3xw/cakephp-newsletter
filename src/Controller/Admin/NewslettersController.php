@@ -43,7 +43,7 @@ class NewslettersController extends AppController
           }
         }
       }
-      if ($this->_send($news_id, 'info@bilatinvestigation.ch',$subscribers )) {
+      if ($this->_send($news_id, 'fact.checkin@bilatinvetigation.ch',$subscribers )) {
         $newsletter->sended = date('Y-m-d H:i:s');
         $newsletter->nb_sent = count($subscribers);
         $this->Newsletters->save($newsletter);
