@@ -28,7 +28,8 @@ class ContactsController extends AppController
         $this->Flash->success(__('You have been added to our mailing list.'));
         return $this->redirect($this->referer());
       }
-      $this->Flash->error(__('The contact could not be saved. Please, try again.'));
+      $this->Flash->error(__('The email already exist or this email is not valid.'));
+      return $this->redirect($this->referer());
     }
     $this->set(compact('contact'));
     $this->set('_serialize', ['contact']);
@@ -47,7 +48,7 @@ class ContactsController extends AppController
     if($contact){
       $contact->subscribe = false;
       $this->Contacts->save($contact);
-      $this->Flash->success(__('The contact has been correctly removed.'));
+      $this->Flash->success(__('This email has been correctly removed.'));
       return $this->redirect($this->referer());
     }else{
       $this->Flash->error(__('This email could not be found. Please, try again.'));
