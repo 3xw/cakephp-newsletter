@@ -1,0 +1,340 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2017-09-26 10:47+0200\n"
+"PO-Revision-Date: 2017-09-26 10:53+0200\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0\n"
+"Last-Translator: Cyril <cyril@3xw.ch>\n"
+"Language: de_CH\n"
+
+#: /Controller/ContactsController.php:28
+msgid "You have been added to our mailing list."
+msgstr ""
+"Vielen Dank, Ihre E-Mail-Adresse ist der Mailing-Liste hinzugefügt worden."
+
+#: /Controller/ContactsController.php:31
+#: /Controller/Admin/ContactsController.php:114;140
+msgid "The contact could not be saved. Please, try again."
+msgstr ""
+
+#: /Controller/ContactsController.php:50
+msgid "The contact has been correctly removed."
+msgstr ""
+
+#: /Controller/ContactsController.php:53
+msgid "This email could not be found. Please, try again."
+msgstr "Kein Kontakt gefunden Bitte versuche es erneut."
+
+#: /Controller/Admin/ContactsController.php:23
+msgid "Import file dosen't work. Please, try again."
+msgstr ""
+
+#: /Controller/Admin/ContactsController.php:32
+msgid "No contact found. Please, try again."
+msgstr "Kein Kontakt gefunden Bitte versuche es erneut."
+
+#: /Controller/Admin/ContactsController.php:110;136
+msgid "The contact has been saved."
+msgstr ""
+
+#: /Controller/Admin/ContactsController.php:159
+msgid "The contact has been deleted."
+msgstr ""
+
+#: /Controller/Admin/ContactsController.php:161
+msgid "The contact could not be deleted. Please, try again."
+msgstr ""
+
+#: /Controller/Admin/MailingListsController.php:57;83
+msgid "The mailing list has been saved."
+msgstr ""
+
+#: /Controller/Admin/MailingListsController.php:61;87
+msgid "The mailing list could not be saved. Please, try again."
+msgstr ""
+
+#: /Controller/Admin/MailingListsController.php:106
+msgid "The mailing list has been deleted."
+msgstr ""
+
+#: /Controller/Admin/MailingListsController.php:108
+msgid "The mailing list could not be deleted. Please, try again."
+msgstr ""
+
+#: /Controller/Admin/NewslettersController.php:20;50
+msgid "The newsletter has been sent."
+msgstr ""
+
+#: /Controller/Admin/NewslettersController.php:53
+msgid "The newsletter has not been sent."
+msgstr ""
+
+#: /Controller/Admin/NewslettersController.php:126;152
+msgid "The newsletter has been saved."
+msgstr ""
+
+#: /Controller/Admin/NewslettersController.php:129;156
+msgid "The newsletter could not be saved. Please, try again."
+msgstr ""
+
+#: /Controller/Admin/NewslettersController.php:176
+msgid "The newsletter has been deleted."
+msgstr ""
+
+#: /Controller/Admin/NewslettersController.php:178
+msgid "The newsletter could not be deleted. Please, try again."
+msgstr ""
+
+#: /Model/Table/ContactsTable.php:69
+msgid "Not unique"
+msgstr ""
+
+#: /Template/Admin/Contacts/add.ctp:1 /Template/Contacts/add.ctp:1
+msgid "Add Contact"
+msgstr ""
+
+#: /Template/Admin/Contacts/add.ctp:23 /Template/Admin/Contacts/edit.ctp:23
+#: /Template/Admin/Contacts/import.ctp:22 /Template/Admin/Contacts/view.ctp:59
+#: /Template/Admin/MailingLists/add.ctp:23
+#: /Template/Admin/MailingLists/edit.ctp:23
+#: /Template/Admin/MailingLists/view.ctp:37
+#: /Template/Admin/Newsletters/add.ctp:36
+#: /Template/Admin/Newsletters/edit.ctp:35
+#: /Template/Admin/Newsletters/view.ctp:326 /Template/Contacts/add.ctp:23
+#: /Template/Contacts/edit.ctp:23 /Template/Contacts/view.ctp:59
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: /Template/Admin/Contacts/add.ctp:24 /Template/Admin/Contacts/edit.ctp:24
+#: /Template/Admin/Contacts/import.ctp:23
+#: /Template/Admin/MailingLists/add.ctp:24
+#: /Template/Admin/MailingLists/edit.ctp:24
+#: /Template/Admin/Newsletters/add.ctp:37
+#: /Template/Admin/Newsletters/edit.ctp:36 /Template/Contacts/add.ctp:24
+#: /Template/Contacts/edit.ctp:24 /Template/Element/SubscribeForm.ctp:4
+#: /Template/Element/UnsubscribeForm.ctp:3
+msgid "Submit"
+msgstr ""
+
+#: /Template/Admin/Contacts/edit.ctp:1 /Template/Admin/Contacts/view.ctp:60
+#: /Template/Contacts/edit.ctp:1 /Template/Contacts/view.ctp:60
+msgid "Edit Contact"
+msgstr ""
+
+#: /Template/Admin/Contacts/import.ctp:1
+msgid "Import Contacts"
+msgstr ""
+
+#: /Template/Admin/Contacts/import.ctp:18
+msgid "Text file"
+msgstr "Textdatei"
+
+#: /Template/Admin/Contacts/index.ctp:1 /Template/Contacts/index.ctp:1
+msgid "Index of Contacts"
+msgstr ""
+
+#: /Template/Admin/Contacts/index.ctp:1
+#: /Template/Admin/MailingLists/index.ctp:1
+#: /Template/Admin/Newsletters/index.ctp:1 /Template/Contacts/index.ctp:1
+msgid "Add"
+msgstr ""
+
+#: /Template/Admin/Contacts/index.ctp:13 /Template/Contacts/index.ctp:13
+msgid "Contacts"
+msgstr "Kontakte"
+
+#: /Template/Admin/Contacts/index.ctp:16;67
+#: /Template/Admin/MailingLists/index.ctp:16;61
+#: /Template/Admin/Newsletters/index.ctp:16;67
+#: /Template/Contacts/index.ctp:16;67
+msgid ""
+"Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} "
+"total"
+msgstr ""
+
+#: /Template/Admin/Contacts/index.ctp:38
+#: /Template/Admin/MailingLists/index.ctp:35
+#: /Template/Admin/MailingLists/view.ctp:72;128
+#: /Template/Admin/Newsletters/index.ctp:38 /Template/Contacts/index.ctp:38
+msgid "Actions"
+msgstr ""
+
+#: /Template/Admin/Contacts/index.ctp:53 /Template/Admin/Contacts/view.ctp:61
+#: /Template/Admin/MailingLists/index.ctp:47
+#: /Template/Admin/MailingLists/view.ctp:39;86;146
+#: /Template/Admin/Newsletters/index.ctp:53
+#: /Template/Admin/Newsletters/view.ctp:328 /Template/Contacts/index.ctp:53
+#: /Template/Contacts/view.ctp:61
+msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+#: /Template/Admin/Contacts/index.ctp:74
+#: /Template/Admin/MailingLists/index.ctp:68
+#: /Template/Admin/Newsletters/index.ctp:74 /Template/Contacts/index.ctp:74
+msgid "Prev"
+msgstr ""
+
+#: /Template/Admin/Contacts/index.ctp:76
+#: /Template/Admin/MailingLists/index.ctp:70
+#: /Template/Admin/Newsletters/index.ctp:76 /Template/Contacts/index.ctp:76
+msgid "Next"
+msgstr ""
+
+#: /Template/Admin/Contacts/view.ctp:15 /Template/Contacts/view.ctp:15
+msgid "Contact"
+msgstr "Kontact"
+
+#: /Template/Admin/Contacts/view.ctp:22 /Template/Contacts/view.ctp:22
+msgid "Key"
+msgstr ""
+
+#: /Template/Admin/Contacts/view.ctp:23 /Template/Contacts/view.ctp:23
+msgid "Value"
+msgstr ""
+
+#: /Template/Admin/Contacts/view.ctp:28
+#: /Template/Admin/MailingLists/view.ctp:70 /Template/Contacts/view.ctp:28
+msgid "Email"
+msgstr "E-Mail"
+
+#: /Template/Admin/Contacts/view.ctp:32
+#: /Template/Admin/MailingLists/view.ctp:25;67;121
+#: /Template/Admin/Newsletters/view.ctp:295 /Template/Contacts/view.ctp:36
+msgid "Id"
+msgstr ""
+
+#: /Template/Admin/Contacts/view.ctp:36
+msgid "Mailing List Id"
+msgstr ""
+
+#: /Template/Admin/Contacts/view.ctp:40
+#: /Template/Admin/MailingLists/view.ctp:68;122
+#: /Template/Admin/Newsletters/view.ctp:299 /Template/Contacts/view.ctp:40
+msgid "Created"
+msgstr "Erstellt"
+
+#: /Template/Admin/Contacts/view.ctp:44
+#: /Template/Admin/MailingLists/view.ctp:69;123
+#: /Template/Admin/Newsletters/view.ctp:303 /Template/Contacts/view.ctp:44
+msgid "Modified"
+msgstr ""
+
+#: /Template/Admin/Contacts/view.ctp:48
+#: /Template/Admin/MailingLists/view.ctp:71 /Template/Contacts/view.ctp:48
+msgid "Subscribe"
+msgstr "Anmelden"
+
+#: /Template/Admin/Contacts/view.ctp:49 /Template/Contacts/view.ctp:49
+msgid "Yes"
+msgstr ""
+
+#: /Template/Admin/Contacts/view.ctp:49 /Template/Contacts/view.ctp:49
+msgid "No"
+msgstr ""
+
+#: /Template/Admin/Contacts/view.ctp:61 /Template/Contacts/view.ctp:61
+msgid "Delete Contact"
+msgstr ""
+
+#: /Template/Admin/MailingLists/add.ctp:1
+msgid "Add Mailing List"
+msgstr ""
+
+#: /Template/Admin/MailingLists/edit.ctp:1
+#: /Template/Admin/MailingLists/view.ctp:38
+msgid "Edit Mailing List"
+msgstr ""
+
+#: /Template/Admin/MailingLists/index.ctp:1
+msgid "Index of Mailing Lists"
+msgstr ""
+
+#: /Template/Admin/MailingLists/index.ctp:13
+#: /Template/Admin/Newsletters/view.ctp:315
+msgid "Mailing Lists"
+msgstr ""
+
+#: /Template/Admin/MailingLists/view.ctp:21;126
+#: /Template/Admin/Newsletters/view.ctp:291
+msgid "Language"
+msgstr "Sprache"
+
+#: /Template/Admin/MailingLists/view.ctp:29
+msgid "Nb Contacts"
+msgstr ""
+
+#: /Template/Admin/MailingLists/view.ctp:39
+msgid "Delete Mailing List"
+msgstr ""
+
+#: /Template/Admin/MailingLists/view.ctp:47;53;100
+msgid "Related Contacts"
+msgstr ""
+
+#: /Template/Admin/MailingLists/view.ctp:101;107;160
+msgid "Related Newsletters"
+msgstr ""
+
+#: /Template/Admin/MailingLists/view.ctp:124
+#: /Template/Admin/Newsletters/view.ctp:307
+msgid "Sended"
+msgstr ""
+
+#: /Template/Admin/MailingLists/view.ctp:125
+#: /Template/Admin/Newsletters/view.ctp:287
+msgid "Subject"
+msgstr "Betreff"
+
+#: /Template/Admin/MailingLists/view.ctp:127
+#: /Template/Admin/Newsletters/view.ctp:311
+msgid "Nb Sent"
+msgstr ""
+
+#: /Template/Admin/Newsletters/add.ctp:1
+msgid "Add Newsletter"
+msgstr ""
+
+#: /Template/Admin/Newsletters/edit.ctp:1
+#: /Template/Admin/Newsletters/view.ctp:327
+msgid "Edit Newsletter"
+msgstr ""
+
+#: /Template/Admin/Newsletters/index.ctp:1
+msgid "Index of Newsletters"
+msgstr ""
+
+#: /Template/Admin/Newsletters/index.ctp:13
+msgid "Newsletters"
+msgstr ""
+
+#: /Template/Admin/Newsletters/view.ctp:273
+msgid "Infos"
+msgstr ""
+
+#: /Template/Admin/Newsletters/view.ctp:328
+msgid "Delete Newsletter"
+msgstr ""
+
+#: /Template/Admin/Newsletters/view.ctp:337
+msgid "Send Test"
+msgstr ""
+
+#: /Template/Admin/Newsletters/view.ctp:340
+msgid "Are you sure you want to send this newsletter?"
+msgstr "Sind Sie sicher, dass Sie diesen Newsletter senden möchten?"
+
+#: /Template/Admin/Newsletters/view.ctp:342
+msgid "Send"
+msgstr ""
+
+#: /Template/Contacts/view.ctp:32
+msgid "Mailing List"
+msgstr ""
